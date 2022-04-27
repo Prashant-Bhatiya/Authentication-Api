@@ -16,7 +16,11 @@ app.post("/register", Register);
 
 app.post("/login", Login);
 
-app.use("/products", productController)
+app.use("/products", productController);
+
+const cors = require('cors');
+
+app.use(cors({origin: '*'}));
 
 app.listen(port, async () => {
   try {
